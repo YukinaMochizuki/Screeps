@@ -9,17 +9,18 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
+    "prettier",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript"
   ],
   parser: "@typescript-eslint/parser",
+  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
   parserOptions: {
     project: "tsconfig.json",
     sourceType: "module"
   },
-  plugins: ["@typescript-eslint", "import"],
+  plugins: ["@typescript-eslint/eslint-plugin", "import"],
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]
@@ -75,7 +76,7 @@ module.exports = {
     "no-new-wrappers": "error",
     "no-shadow": "off",
     "no-throw-literal": "error",
-    "no-trailing-spaces": "off",
+    "no-trailing-spaces": "error",
     "no-undef-init": "error",
     "no-underscore-dangle": "warn",
     "no-var": "error",
